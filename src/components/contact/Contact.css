@@ -1,0 +1,27 @@
+.container {
+  margin-top: 2rem;
+  max-width: 550px;
+  border: 1px solid lightgray;
+  padding: 2rem 3rem 4rem 3rem;
+  border-radius: 5px;
+}
+
+button {
+  margin-left: 0;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #264a47;
+}
+
+select {
+  width: 100%;
+}
+
+label {
+  margin-top: 1rem;
+  margin-bottom: 0.1rem;
+}
