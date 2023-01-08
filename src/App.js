@@ -9,13 +9,9 @@ import {
 } from "react-router-dom";
 import Home from "./components/home/Home";
 import Detail from "./components/detail/Detail";
-// import Contact from "./components/contact/Contact";
-// import Login from "./components/login/Login";
 import LoginForm from "./components/login/LoginForm";
 import ContactForm from "./components/contact/ContactForm";
-import { Provider } from "react-redux";
-import store from "./store/store";
-import Favorites from "./components/favorites/Favorites";
+import ToastContainer from "react-bootstrap/ToastContainer";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,24 +19,19 @@ function App() {
       path: "/",
       element: (
         <div>
-          <Provider store={store}>
-            <Navbar expand="lg"></Navbar>
-            <Nav className="mr-auto">
-              <NavLink to={`/`} className="nav-link">
-                Home
-              </NavLink>
-              <NavLink to={`/contact`} className="nav-link">
-                Contact
-              </NavLink>
-              <NavLink to={`/login`} className="nav-link">
-                Login
-              </NavLink>
-              <NavLink to={`/favorites`} className="nav-link">
-                Favorites
-              </NavLink>
-            </Nav>
-            <Outlet />
-          </Provider>
+          <Navbar expand="lg"></Navbar>
+          <Nav className="mr-auto">
+            <NavLink to={`/`} className="nav-link">
+              Home
+            </NavLink>
+            <NavLink to={`/contact`} className="nav-link">
+              Contact
+            </NavLink>
+            <NavLink to={`/login`} className="nav-link">
+              Login
+            </NavLink>
+          </Nav>
+          <Outlet />
         </div>
       ),
       children: [
@@ -59,10 +50,6 @@ function App() {
         {
           path: "/login",
           element: <LoginForm />,
-        },
-        {
-          path: "/favorites",
-          element: <Favorites />,
         },
         {
           path: "/admin",

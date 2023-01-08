@@ -3,6 +3,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./Contact.css";
 import { Form } from "react-bootstrap";
+import Snackbar from "../snackbar/Snackbar";
+import { useState } from "react";
 // import { BASE_URL, LOGIN_PATH } from "../../api";
 // import axios from "axios";
 // import { useState } from "react";
@@ -35,6 +37,7 @@ function ContactForm() {
   //   const [unsuccessfulLoginMessage, setUnsuccessfulLoginMessage] =
   //     useState(null);
   //   const navigate = useNavigate();
+  const [showSnackbar, setShowSnackbar] = useState(false);
   const {
     register,
     handleSubmit,
@@ -45,6 +48,7 @@ function ContactForm() {
 
   async function onSubmit(data) {
     console.log(data);
+    setShowSnackbar(true);
   }
 
   return (
@@ -81,6 +85,11 @@ function ContactForm() {
         </Form.Group>
         <button type="submit">Send</button>
       </Form>
+      <Snackbar
+        description="Message is sent!"
+        show={showSnackbar}
+        setShow={setShowSnackbar}
+      />
     </>
   );
 }
